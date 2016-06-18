@@ -394,6 +394,16 @@ DISTRIBUTIONS
       Scalar::Util 0
       strict 0
       warnings 0
+  Term-ReadLine-Gnu-1.34
+    pathname: H/HA/HAYASHI/Term-ReadLine-Gnu-1.34.tar.gz
+    provides:
+      Term::ReadLine::Gnu 1.34
+      Term::ReadLine::Gnu::AU 1.34
+      Term::ReadLine::Gnu::Var 1.34
+      Term::ReadLine::Gnu::XS 1.34
+    requirements:
+      ExtUtils::MakeMaker 0
+      perl 5.008001
   Try-Tiny-0.24
     pathname: E/ET/ETHER/Try-Tiny-0.24.tar.gz
     provides:
