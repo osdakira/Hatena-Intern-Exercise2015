@@ -3,6 +3,8 @@ use warnings;
 
 use Test::More;
 
+use Data::Dumper;
+
 use_ok 'Parser';
 
 my $parser = Parser->new( filename => '../sample_data/log.ltsv' );
