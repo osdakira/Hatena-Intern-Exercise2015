@@ -1,1 +1,2 @@
-requires 'B::Lint'
+requires 'B::Lint';
+requires "Pry";
