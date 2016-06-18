@@ -8,6 +8,10 @@ sub new {
 }
 
 sub parse {
+  my $self = shift;
+  open my $fh, '<', $self->{filename} or die $!;
+  my @lines = <$fh>;
+  print @lines;
 }
 
 1;
