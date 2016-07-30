@@ -12,16 +12,16 @@ sub new {
 
 sub group_by_user {
   my ($self) = @_;
-  my %hash;
+  my $hash = {};
   my @logs = map { @$_ } $self->{logs};
   foreach my $log (@logs) {
     my $user = $log->{user} || "guest";
-    unless ($hash{$user}) {
-      $hash{$user} = [];
+    unless (${$hash}{$user}) {
+      ${$hash}{$user} = [];
     }
-    push(@{$hash{$user}}, $log);
+    push(@{${$hash}{$user}}, $log);
   }
-  return \%hash;
+  return $hash;
 }
 
 sub count_error {
