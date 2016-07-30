@@ -13,8 +13,7 @@ sub new {
 sub group_by_user {
   my ($self) = @_;
   my $hash = {};
-  my @logs = map { @$_ } $self->{logs};
-  foreach my $log (@logs) {
+  foreach my $log (@{$self->{logs}}) {
     my $user = $log->{user} || "guest";
     unless (${$hash}{$user}) {
       ${$hash}{$user} = [];
@@ -26,7 +25,7 @@ sub group_by_user {
 
 sub count_error {
   my ($self) = @_;
-  my $count = grep { $_->{status} =~ /^5/ } map { @$_ } $self->{logs};
+  my $count = grep { $_->{status} =~ /^5/ } @{$self->{logs}};
   return $count;
 }
 
