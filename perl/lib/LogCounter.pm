@@ -15,9 +15,7 @@ sub group_by_user {
   my $hash = {};
   foreach my $log (@{$self->{logs}}) {
     my $user = $log->{user} || "guest";
-    unless ($hash->{$user}) {
-      $hash->{$user} = [];
-    }
+    $hash->{$user} = [] unless exists $hash->{$user};
     push(@{$hash->{$user}}, $log);
   }
   return $hash;
